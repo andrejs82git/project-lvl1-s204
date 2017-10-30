@@ -1,0 +1,33 @@
+{
+  "name": "project-lvl1-s204",
+  "version": "1.0.0",
+  "description": "brain games project",
+	"bin": {
+		  "brain-games": "dist/bin/brain-games.js"
+	},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"babel-node": "babel-node",
+		"build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+		"prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrejs82git/project-lvl1-s204.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Sokolov Andrej",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrejs82git/project-lvl1-s204/issues"
+  },
+  "homepage": "https://github.com/andrejs82git/project-lvl1-s204#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
