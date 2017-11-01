@@ -40,4 +40,4 @@ export const runBrainEven = () => {
 
 export default () => {
   console.log('Hellow World!');
-}
+};
