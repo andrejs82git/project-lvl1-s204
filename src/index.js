@@ -16,7 +16,7 @@ const getCorrectAnswer = (num) => {
   return isEven ? ANSWER_IS_EVEN : ANSWER_IS_NOT_EVEN;
 };
 
-const run = () => {
+export const runBrainEven = () => {
   let countCorrectAnswers = 0;
 
   console.log('Welcome to the Brain Games!\n');
@@ -38,4 +38,6 @@ const run = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default run;
+export default () => {
+  console.log('Hellow World!');
+}
