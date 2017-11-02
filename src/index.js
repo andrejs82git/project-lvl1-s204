@@ -7,12 +7,12 @@ export const greeting = () => {
   console.log('Welcome to the Brain Games!\n');
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${userName}!`);
-	return userName;
+  return userName;
 };
 
 export const runBrainGames = () => {
   greeting();
-}
+};
 
 const getRandom = () =>
   Math.floor(Math.random() * 100);
