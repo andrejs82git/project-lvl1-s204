@@ -3,13 +3,22 @@ import readlineSync from 'readline-sync';
 const ANSWER_IS_EVEN = 'yes';
 const ANSWER_IS_NOT_EVEN = 'no';
 
+export const greeting = () => {
+  console.log('Welcome to the Brain Games!\n');
+  const userName = readlineSync.question('May I have your name?: ');
+  console.log(`Hello, ${userName}!`);
+	return userName;
+};
+
+export const runBrainGames = () => {
+  greeting();
+}
+
 const getRandom = () =>
   Math.floor(Math.random() * 100);
 
-
 const isEvenNumber = num =>
   num % 2 === 0;
-
 
 const getCorrectAnswer = (num) => {
   const isEven = isEvenNumber(num);
@@ -18,10 +27,7 @@ const getCorrectAnswer = (num) => {
 
 export const runBrainEven = () => {
   let countCorrectAnswers = 0;
-
-  console.log('Welcome to the Brain Games!\n');
-  const userName = readlineSync.question('May I have your name?: ');
-  console.log(`Hello, ${userName}!`);
+  const userName = greeting();
 
   while (countCorrectAnswers < 3) {
     const randomNumber = getRandom();
@@ -38,6 +44,3 @@ export const runBrainEven = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default () => {
-  console.log('Hellow World!');
-};

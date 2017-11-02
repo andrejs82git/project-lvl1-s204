@@ -7,6 +7,9 @@ lint:
 start:
 	npm run babel-node -- src/bin/brain-games.js
 
+pstart:
+	npm run babel-node -- src/bin/brain-$(p).js
+
 publish:
 	npm publish ./
 
