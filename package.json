@@ -1,11 +1,12 @@
 {
   "name": "project-lvl1-s204",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "brain games project",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js"
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-calc": "dist/bin/brain-gcd.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

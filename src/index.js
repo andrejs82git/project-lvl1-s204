@@ -7,7 +7,8 @@ export const greeting = () => {
   return userName;
 };
 
-const getRandom = capacity => Math.floor(Math.random() * capacity);
+const getRandom = (min, max) =>
+  Math.floor(Math.random() * ((max - min) + 1)) + min;
 
 const getQuestion = task => task('question');
 
@@ -35,7 +36,7 @@ const runMainFlow = (taskGen) => {
 const taskEvenGen = () => {
   const ANSWER_IS_EVEN = 'yes';
   const ANSWER_IS_NOT_EVEN = 'no';
-  const randomNumber = getRandom(100);
+  const randomNumber = getRandom(1, 100);
   const isEven = (randomNumber % 2) === 0;
   const correctAnswer = isEven ? ANSWER_IS_EVEN : ANSWER_IS_NOT_EVEN;
 
@@ -58,9 +59,9 @@ const taskCalcGen = () => {
     { name: '-', answer: (a, b) => a - b },
     { name: '*', answer: (a, b) => a * b },
   ];
-  const op = operations[getRandom(3)];
-  const num1 = getRandom(10);
-  const num2 = getRandom(10);
+  const op = operations[getRandom(0, 2)];
+  const num1 = getRandom(0, 10);
+  const num2 = getRandom(0, 10);
 
   const correctAnswer = op.answer(num1, num2);
 
@@ -68,6 +69,34 @@ const taskCalcGen = () => {
     switch (prop) {
       case 'question': {
         return `${num1} ${op.name} ${num2}`;
+      }
+      case 'answer': {
+        return `${correctAnswer}`;
+      }
+      default: return null;
+    }
+  };
+};
+
+const taskGcdGen = () => {
+  const num1 = getRandom(0, 100);
+  const num2 = getRandom(0, 100);
+
+  const minDivide = (a, b) => {
+    const min = a < b ? a : b;
+    let result = 1;
+    for (let q = 1; q <= min; q += 1) {
+      if (a % q === 0 && b % q === 0) result = q;
+    }
+    return result;
+  };
+
+  const correctAnswer = minDivide(num1, num2);
+
+  return (prop) => {
+    switch (prop) {
+      case 'question': {
+        return `${num1} ${num2}`;
       }
       case 'answer': {
         return `${correctAnswer}`;
@@ -87,5 +116,9 @@ export const runBrainEven = () => {
 
 export const runBrainCalc = () => {
   runMainFlow(taskCalcGen);
+};
+
+export const runBrainGcd = () => {
+  runMainFlow(taskGcdGen);
 };
 
