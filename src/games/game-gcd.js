@@ -1,5 +1,5 @@
-import { runMainFlow } from '../index.js';
-import { getRandom } from '../utils.js';
+import { runMainFlow } from '..';
+import { getRandom } from '../utils';
 
 const taskGcdGen = () => {
   const num1 = getRandom(0, 100);

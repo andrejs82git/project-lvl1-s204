@@ -1,5 +1,5 @@
-import { runMainFlow } from '../index.js';
-import { getRandom } from '../utils.js';
+import { runMainFlow } from '..';
+import { getRandom } from '../utils';
 
 const taskEvenGen = () => {
   const ANSWER_IS_EVEN = 'yes';
@@ -9,14 +9,14 @@ const taskEvenGen = () => {
   const correctAnswer = isEven ? ANSWER_IS_EVEN : ANSWER_IS_NOT_EVEN;
 
   return (prop) => {
-  switch (prop) {
-    case 'question': {
-      return randomNumber;
-    }
-    case 'answer': {
-      return correctAnswer;
-    }
-    default: return null;
+    switch (prop) {
+      case 'question': {
+        return randomNumber;
+      }
+      case 'answer': {
+        return correctAnswer;
+      }
+      default: return null;
     }
   };
 };

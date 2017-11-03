@@ -1,4 +1,4 @@
-import { runMainFlow } from '../index.js';
+import { runMainFlow } from '..';
 
 export default () => {
   runMainFlow();
