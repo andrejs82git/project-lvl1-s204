@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getRandom } from './utils.js';
 
 export const greeting = () => {
   console.log('Welcome to the Brain Games!\n');
@@ -6,9 +7,6 @@ export const greeting = () => {
   console.log(`Hello, ${userName}!`);
   return userName;
 };
-
-const getRandom = (min, max) =>
-  Math.floor(Math.random() * ((max - min) + 1)) + min;
 
 const getQuestion = task => task('question');
 
@@ -36,31 +34,6 @@ export const runMainFlow = (taskGen) => {
   if (countCorrectAnswers === 3) {
     console.log(`Congratulations, ${userName}!`);
   }
-};
-
-const taskCalcGen = () => {
-  const operations = [
-    { name: '+', answer: (a, b) => a + b },
-    { name: '-', answer: (a, b) => a - b },
-    { name: '*', answer: (a, b) => a * b },
-  ];
-  const op = operations[getRandom(0, 2)];
-  const num1 = getRandom(0, 10);
-  const num2 = getRandom(0, 10);
-
-  const correctAnswer = op.answer(num1, num2);
-
-  return (prop) => {
-    switch (prop) {
-      case 'question': {
-        return `${num1} ${op.name} ${num2}`;
-      }
-      case 'answer': {
-        return `${correctAnswer}`;
-      }
-      default: return null;
-    }
-  };
 };
 
 const taskGcdGen = () => {
