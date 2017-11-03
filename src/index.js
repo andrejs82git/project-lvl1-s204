@@ -28,9 +28,14 @@ const runMainFlow = (taskGen) => {
       countCorrectAnswers += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      break;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+
+  if (countCorrectAnswers === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
 };
 
 const taskEvenGen = () => {
