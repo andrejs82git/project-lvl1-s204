@@ -14,7 +14,7 @@ const getQuestion = task => task('question');
 
 const getAnswer = task => task('answer');
 
-const runMainFlow = (taskGen) => {
+export const runMainFlow = (taskGen) => {
   let countCorrectAnswers = 0;
   const userName = greeting();
 
@@ -36,26 +36,6 @@ const runMainFlow = (taskGen) => {
   if (countCorrectAnswers === 3) {
     console.log(`Congratulations, ${userName}!`);
   }
-};
-
-const taskEvenGen = () => {
-  const ANSWER_IS_EVEN = 'yes';
-  const ANSWER_IS_NOT_EVEN = 'no';
-  const randomNumber = getRandom(1, 100);
-  const isEven = (randomNumber % 2) === 0;
-  const correctAnswer = isEven ? ANSWER_IS_EVEN : ANSWER_IS_NOT_EVEN;
-
-  return (prop) => {
-    switch (prop) {
-      case 'question': {
-        return randomNumber;
-      }
-      case 'answer': {
-        return correctAnswer;
-      }
-      default: return null;
-    }
-  };
 };
 
 const taskCalcGen = () => {
