@@ -16,6 +16,7 @@ export const runMainFlow = (taskGen) => {
   let countCorrectAnswers = 0;
   const userName = greeting();
 
+  if (!taskGen) return;
   while (countCorrectAnswers < 3) {
     const task = taskGen();
     console.log(`Question:  ${getQuestion(task)}`);
@@ -62,18 +63,6 @@ const taskGcdGen = () => {
       default: return null;
     }
   };
-};
-
-export const runBrainGames = () => {
-  greeting();
-};
-
-export const runBrainEven = () => {
-  runMainFlow(taskEvenGen);
-};
-
-export const runBrainCalc = () => {
-  runMainFlow(taskCalcGen);
 };
 
 export const runBrainGcd = () => {
