@@ -13,16 +13,9 @@ const taskCalcGen = () => {
 
   const correctAnswer = op.answer(num1, num2);
 
-  return (prop) => {
-    switch (prop) {
-      case 'question': {
-        return `${num1} ${op.name} ${num2}`;
-      }
-      case 'answer': {
-        return `${correctAnswer}`;
-      }
-      default: return null;
-    }
+  return {
+    question: `${num1} ${op.name} ${num2}`,
+    answer: `${correctAnswer}`
   };
 };
 

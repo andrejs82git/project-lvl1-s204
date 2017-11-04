@@ -7,9 +7,9 @@ export const greeting = () => {
   return userName;
 };
 
-const getQuestion = task => task('question');
+const getQuestion = task => task.question;
 
-const getAnswer = task => task('answer');
+const getAnswer = task => task.answer;
 
 export const runMainFlow = (taskGen) => {
   let countCorrectAnswers = 0;

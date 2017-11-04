@@ -8,16 +8,9 @@ const taskEvenGen = () => {
   const isEven = (randomNumber % 2) === 0;
   const correctAnswer = isEven ? ANSWER_IS_EVEN : ANSWER_IS_NOT_EVEN;
 
-  return (prop) => {
-    switch (prop) {
-      case 'question': {
-        return randomNumber;
-      }
-      case 'answer': {
-        return correctAnswer;
-      }
-      default: return null;
-    }
+  return {
+    question: randomNumber,
+    answer: correctAnswer
   };
 };
 

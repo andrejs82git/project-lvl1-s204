@@ -7,16 +7,9 @@ const taskGcdGen = () => {
 
   const correctAnswer = minDivide(num1, num2);
 
-  return (prop) => {
-    switch (prop) {
-      case 'question': {
-        return `${num1} ${num2}`;
-      }
-      case 'answer': {
-        return `${correctAnswer}`;
-      }
-      default: return null;
-    }
+  return {
+    question: `${num1} ${num2}`,
+    answer: `${correctAnswer}`
   };
 };
 
