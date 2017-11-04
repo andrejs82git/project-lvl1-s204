@@ -1,18 +1,19 @@
 import { runMainFlow } from '..';
 import { getRandom } from '../utils';
 
-function* progressGenBuilder(first, step) {
+const progressGenBuilder = (first, step) => {
   let next = first;
-  while (true) {
-    yield next;
+  return () => {
+    const result = next;
     next += step;
-  }
-}
+    return result;
+  };
+};
 
 const taskProgressionGen = () => {
   const progressGen = progressGenBuilder(getRandom(0, 20), getRandom(1, 20));
-  const progression = Array.from({ length: 10 }, () => progressGen.next().value);
-  const qIndex = getRandom(0, 10);
+  const progression = Array.from({ length: 10 }, () => progressGen());
+  const qIndex = getRandom(0, 9);
   const answer = progression[qIndex];
   progression[qIndex] = '..';
 
