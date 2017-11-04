@@ -1,6 +1,6 @@
 {
   "name": "project-lvl1-s204",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "brain games project",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
