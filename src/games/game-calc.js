@@ -15,7 +15,7 @@ const taskCalcGen = () => {
 
   return {
     question: `${num1} ${op.name} ${num2}`,
-    answer: `${correctAnswer}`
+    answer: `${correctAnswer}`,
   };
 };
 

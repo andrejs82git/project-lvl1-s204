@@ -10,7 +10,7 @@ const taskEvenGen = () => {
 
   return {
     question: randomNumber,
-    answer: correctAnswer
+    answer: correctAnswer,
   };
 };
 
