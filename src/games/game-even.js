@@ -1,6 +1,8 @@
 import { runMainFlow } from '..';
 import { getRandom } from '../utils';
 
+const QUESTION = 'Answer "yes" if number even otherwise answer "no".';
+
 const taskEvenGen = () => {
   const ANSWER_IS_EVEN = 'yes';
   const ANSWER_IS_NOT_EVEN = 'no';
@@ -15,6 +17,6 @@ const taskEvenGen = () => {
 };
 
 export default () => {
-  runMainFlow(taskEvenGen);
+  runMainFlow(QUESTION, taskEvenGen);
 };
 

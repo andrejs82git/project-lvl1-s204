@@ -1,6 +1,8 @@
 import { runMainFlow } from '..';
 import { getRandom } from '../utils';
 
+const QUESTION = 'Balance the given number.';
+
 const getMaxIndex = array =>
   array.reduce((iMax, n, index, arr) => (n > arr[iMax] ? index : iMax), 0);
 
@@ -38,6 +40,6 @@ const taskBalanceGen = () => {
 };
 
 export default () => {
-  runMainFlow(taskBalanceGen);
+  runMainFlow(QUESTION, taskBalanceGen);
 };
 

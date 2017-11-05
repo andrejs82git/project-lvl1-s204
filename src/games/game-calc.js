@@ -1,6 +1,8 @@
 import { runMainFlow } from '..';
 import { getRandom } from '../utils';
 
+const QUESTION = 'What is the result of the expression?';
+
 const taskCalcGen = () => {
   const operations = [
     { name: '+', answer: (a, b) => a + b },
@@ -20,6 +22,6 @@ const taskCalcGen = () => {
 };
 
 export default () => {
-  runMainFlow(taskCalcGen);
+  runMainFlow(QUESTION, taskCalcGen);
 };
 

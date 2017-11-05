@@ -1,6 +1,8 @@
 import { runMainFlow } from '..';
 import { getRandom } from '../utils';
 
+const QUESTION = 'Find the greatest common divisor of given numbers.';
+
 const minDivide = (a, b) => {
   const min = a < b ? a : b;
   let result = 1;
@@ -23,6 +25,6 @@ const taskGcdGen = () => {
 };
 
 export default () => {
-  runMainFlow(taskGcdGen);
+  runMainFlow(QUESTION, taskGcdGen);
 };
 

@@ -1,6 +1,8 @@
 import { runMainFlow } from '..';
 import { getRandom, progressArifmGenBuilder } from '../utils';
 
+const QUESTION = 'What number is missing in this progression?';
+
 const taskProgressionGen = () => {
   const progressGen = progressArifmGenBuilder(getRandom(0, 20), getRandom(1, 20));
   const progression = Array.from({ length: 10 }, () => progressGen());
@@ -15,6 +17,6 @@ const taskProgressionGen = () => {
 };
 
 export default () => {
-  runMainFlow(taskProgressionGen);
+  runMainFlow(QUESTION, taskProgressionGen);
 };
 

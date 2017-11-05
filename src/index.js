@@ -1,9 +1,12 @@
 import readlineSync from 'readline-sync';
 
-export const greeting = () => {
-  console.log('Welcome to the Brain Games!\n');
-  const userName = readlineSync.question('May I have your name?: ');
-  console.log(`Hello, ${userName}!`);
+export const greeting = (question) => {
+  console.log('Welcome to the Brain Games!');
+  if (question) {
+    console.log(question);
+  }
+  const userName = readlineSync.question('\nMay I have your name?: ');
+  console.log(`Hello, ${userName}!\n`);
   return userName;
 };
 
@@ -11,9 +14,9 @@ const getQuestion = task => task.question;
 
 const getAnswer = task => task.answer;
 
-export const runMainFlow = (taskGen) => {
+export const runMainFlow = (question, taskGen) => {
   let countCorrectAnswers = 0;
-  const userName = greeting();
+  const userName = greeting(question);
 
   if (!taskGen) return;
   while (countCorrectAnswers < 3) {
