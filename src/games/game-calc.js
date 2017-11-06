@@ -1,4 +1,4 @@
-import { runMainFlow } from '..';
+import runMainFlow from '..';
 import { getRandom } from '../utils';
 
 const QUESTION = 'What is the result of the expression?';

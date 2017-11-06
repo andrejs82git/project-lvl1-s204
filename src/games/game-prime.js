@@ -1,4 +1,4 @@
-import { runMainFlow } from '..';
+import runMainFlow from '..';
 import { getRandom } from '../utils';
 
 const QUESTION = 'Please answer "yes" if number is prime or "no" otherwise.';

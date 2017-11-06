@@ -1,7 +1,7 @@
 const getRandom = (min, max) =>
   Math.floor(Math.random() * ((max - min) + 1)) + min;
 
-const progressArifmGenBuilder = (first, step) => {
+const progressArithmeticGenBuilder = (first, step) => {
   let next = first;
   return () => {
     const result = next;
@@ -10,4 +10,4 @@ const progressArifmGenBuilder = (first, step) => {
   };
 };
 
-export { progressArifmGenBuilder, getRandom };
+export { progressArithmeticGenBuilder, getRandom };

@@ -1,10 +1,12 @@
 import readlineSync from 'readline-sync';
 
-export const greeting = (question) => {
+const COUNT_TASK = 3;
+
+const greeting = () => {
   console.log('Welcome to the Brain Games!');
-  if (question) {
-    console.log(question);
-  }
+};
+
+const askName = () => {
   const userName = readlineSync.question('\nMay I have your name?: ');
   console.log(`Hello, ${userName}!\n`);
   return userName;
@@ -14,12 +16,15 @@ const getQuestion = task => task.question;
 
 const getAnswer = task => task.answer;
 
-export const runMainFlow = (question, taskGen) => {
+const runMainFlow = (question, taskGen) => {
   let countCorrectAnswers = 0;
-  const userName = greeting(question);
+
+  greeting();
+  if (question) console.log(question);
+  const userName = askName();
 
   if (!taskGen) return;
-  while (countCorrectAnswers < 3) {
+  while (countCorrectAnswers < COUNT_TASK) {
     const task = taskGen();
     console.log(`Question:  ${getQuestion(task)}`);
     const answer = readlineSync.question('Your answer: ');
@@ -38,4 +43,4 @@ export const runMainFlow = (question, taskGen) => {
     console.log(`Congratulations, ${userName}!`);
   }
 };
-
+export default runMainFlow;

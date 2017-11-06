@@ -1,4 +1,4 @@
-import { runMainFlow } from '..';
+import runMainFlow from '..';
 
 export default () => {
   runMainFlow();
